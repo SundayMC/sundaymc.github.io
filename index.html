@@ -1,0 +1,230 @@
+<html lang="fr">
+
+<head>
+    <title>TNT Wars | KraftyCorp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/img/tntwars-logo.jpg">
+
+    <link rel="stylesheet" href="/icons/css/fontello-embedded.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preload" as="image" href="/img/Background.jpg">
+
+</head>
+
+<body>
+    <main>
+        <h1 id="title_page">La KraftyCorp présente : </h1>
+        <div class="carroussel gap">
+
+            <ul class="content_list">
+                <li class="active">
+                    <div class="carroussel_content">
+                        <div class="carroussel_image">
+                            <!-- <img src="https://picsum.photos/1000?blur"> -->
+                            <img id="test-image" src="/img/test-image.png">
+                        </div>
+                        <div class="carroussel_text">
+                            <h3 class="carroussel_title">TNT Wars!</h3>
+                            <p class="carroussel_description">Une map de tnt wars vanilla hyper customisable! Scroll
+                                pour en savoir plus! </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="carroussel_content">
+                        <div class="carroussel_image">
+                            <!-- <img src="https://picsum.photos/1000?blur"> -->
+                            <img id="test-image" src="/img/test2-image.jpg">
+                        </div>
+                        <div class="carroussel_text">
+                            <h3 class="carroussel_title">Des admins bizzares</h3>
+                            <p class="carroussel_description">Et oui, les admins sont des gros cons :D</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="carroussel_content">
+                        <div class="carroussel_image">
+                            <!-- <img src="https://picsum.photos/1000?blur"> -->
+                            <img id="test-image" src="/img/kraftycorp-logo.png">
+                        </div>
+                        <div class="carroussel_text">
+                            <h3 class="carroussel_title">Un logo trouvé sur <a href="https://wallhaven.cc/"
+                                    target="_blank">wallhaven</a></h3>
+                            <p class="carroussel_description">Et oui, t'as cru quoi, on te baise :p</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="carroussel_content">
+                        <div class="carroussel_image">
+                            <!-- <img src="https://picsum.photos/1000?blur"> -->
+                            <img id="test-image" src="/img/kraftycorp-logo.png">
+                        </div>
+                        <div class="carroussel_text">
+                            <h3 class="carroussel_title">BIS Un logo trouvé sur <a href="https://wallhaven.cc/"
+                                    target="_blank">wallhaven</a></h3>
+                            <p class="carroussel_description">Et oui, t'as cru quoi, on te baise :p</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="carroussel_pagination">
+                <div class="pagination_dot active"></div>
+                <div class="pagination_dot"></div>
+                <div class="pagination_dot"></div>
+                <div class="pagination_dot"></div>
+            </div>
+        </div>
+
+        <div class="downloads gap">
+            <!-- The text field -->
+            <table CELLSPACING=0>
+                <thead>
+                    <th>
+                        <h3>En Ligne (MC 1.17.1)</h3>
+                    </th>
+                    <th>
+                        <h3>En téléchargement</h3>
+                    </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="online_link">
+                            <ul id="online_link_button" onclick="copyip_button()">
+                                <li id="ip">play.oqitopia.fr</li>
+                                <li class="copy_icon"><i class="icon-clipboard"></i></li>
+                            </ul>
+                        </td>
+                        <td id="dl_link">
+                            <a href="https://www.dropbox.com/s/2pxjq4kq861gp9z/SundayMC%27s%20remix%20pack%20%28for%20MC%201.16.X%29.zip?dl=1" target="_blank"><i class="icon-download-cloud"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+    </main>
+    <footer class="gap">
+        <h5 id="powered_by">L'existence de ce site est possible grâce à : <a href="https://corehost-solutions.com/"
+                target="_blank">CoreHost Solutions</a></h5>
+    </footer>
+    <ul class="icon_wrapper">
+        <a href="https://discord.gg/SfgG4wAgWA" target="__blank">
+            <li class="icon discord">
+                <span class="tooltip">Discord</span>
+                <span><i class="icon-discord"></i></span>
+            </li>
+        </a>
+        <a href="https://www.patreon.com/kraftycorp" target="__blank">
+            <li class="icon patreon">
+                <span class="tooltip">Patreon</span>
+                <span><i class="icon-patreon"></i></span>
+            </li>
+        </a>
+
+    </ul>
+    <script>
+
+        function setup_roux(el) {
+            let el_lst = Array.from(el.getElementsByClassName("pagination_dot"))
+            el_lst.forEach((item) => {
+                let idx = Array.from(item.parentNode.children).indexOf(item);
+                item.addEventListener("click", (e) => {
+                    let list_elems = Array.from(el.getElementsByClassName("content_list")[0].children);
+                    list_elems.forEach((elem) => {
+                        elem.className = ""
+                    })
+                    list_elems[idx].className = "active"
+                    el_lst.forEach((elem) => {
+                        elem.className = "pagination_dot"
+                    })
+                    e.target.className = "pagination_dot active"
+                })
+            })
+
+            let delay = 0
+            let pag_list = el.getElementsByClassName("pagination_dot");
+            let dot_ul = el.getElementsByClassName("carroussel_pagination")[0]
+            let active_dot = dot_ul.getElementsByClassName("active")[0];
+            let idx = Array.from(dot_ul.children).indexOf(active_dot);
+
+            function handleWheel(e) {
+                let action = true
+                let deltaScroll = e.detail || e.deltaY;
+                if (Date.now() - delay < 300) {
+                    action = false
+                }
+                if (action) {
+
+                    delay = Date.now()
+                    let active_dot = dot_ul.getElementsByClassName("active")[0];
+                    idx = Array.from(dot_ul.children).indexOf(active_dot);
+                    if (deltaScroll > 0) {
+                        idx += 1
+                    } else if (deltaScroll < 0) {
+                        idx -= 1
+                    };
+                    idx = Math.max(0, Math.min(idx, pag_list.length - 1))
+                    console.log(e)
+                    let list_elems = Array.from(el.getElementsByClassName("content_list")[0].children);
+                    list_elems.forEach((elem) => {
+                        elem.className = ""
+                    })
+                    list_elems[idx].className = "active"
+                    el_lst.forEach((elem) => {
+                        elem.className = "pagination_dot"
+                    })
+                    dot_ul.children[idx].className = "pagination_dot active"
+                }
+
+            }
+
+            // For Chrome
+            el.addEventListener('mousewheel', (e) => {
+                let deltaScroll = e.detail || e.deltaY;
+                if (!(deltaScroll > 0 && pag_list.length - 1 == idx && idx > 0) && !(deltaScroll < 0 && idx == 0)) {
+                    e.preventDefault()
+                }
+                if (Math.abs(deltaScroll) > 3) {
+                    handleWheel(e)
+                }
+
+            }, { passive: false });
+
+            // For Firefox
+            el.addEventListener('DOMMouseScroll', (e) => {
+                let deltaScroll = e.detail || e.deltaY;
+                if (!(deltaScroll > 0 && pag_list.length - 1 == idx && idx > 0) && !(deltaScroll < 0 && idx == 0)) {
+                    e.preventDefault()
+                }
+                handleWheel(e)
+            }, { passive: false });
+        }
+
+        let roux_sels = document.querySelectorAll("div.carroussel");
+        roux_sels.forEach((el) => {
+            setup_roux(el)
+        })
+
+        function copyip_button() {
+            /* Get the text field */
+            var copyText = document.getElementById("ip");
+            var link_btn = document.getElementById("online_link_button");
+            link_btn.className = "clicked"
+
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(copyText.textContent);
+
+
+        }
+
+    </script>
+</body>
+
+</html>
