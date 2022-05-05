@@ -373,6 +373,19 @@ div.downloads #online_link {
   font-size: 45px;
 }
 
+.icon_wrapper .patch-notes:hover,
+.icon_wrapper .patch-notes:hover .tooltip,
+.icon_wrapper .patch-notes:hover .tooltip::before {
+  background: #087e51;
+  color: #ffffff;
+  font-family: 'Agane', sans-serif;
+  font-weight: lighter;
+}
+
+.icon_wrapper .patch-notes {
+  font-size: 45px;
+}
+
 .icon_wrapper .patreon:hover,
 .icon_wrapper .patreon:hover .tooltip,
 .icon_wrapper .patreon:hover .tooltip::before {
