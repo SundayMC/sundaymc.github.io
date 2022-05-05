@@ -81,8 +81,8 @@
                                 <li class="copy_icon"><i class="icon-clipboard"></i></li>
                             </ul>
                         </td>
-                        <td id="dl_link">
-                            <a href="https://www.dropbox.com/s/stu2idb3u52s3yx/tnt-wars.zip?dl=1" target="_blank"><i class="icon-download-cloud"></i></a>
+                        <td id="dl_link" onclick="download_soon()">
+                            <a href="#" target="_blank"><i class="icon-download-cloud"></i></a>
                         </td>
                     </tr>
                 </tbody>
@@ -211,6 +211,10 @@
             navigator.clipboard.writeText(copyText.textContent);
 
 
+        }
+        
+        function download_soon() {
+            alert("La map n'est pas encore sortie, encore un peu de patience !");
         }
 
     </script>
