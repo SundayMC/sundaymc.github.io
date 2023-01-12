@@ -52,7 +52,7 @@ div.carroussel {
   position: relative;
   align-items: center;
   background-color: white;
-  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 20px;
   padding-top: 30px;
@@ -370,42 +370,33 @@ div.downloads #online_link {
 }
 
 .icon_wrapper .discord {
-  font-size: 45px;
+  font-size: 60px;
 }
 
-.icon_wrapper .patch-notes:hover,
-.icon_wrapper .patch-notes:hover .tooltip,
-.icon_wrapper .patch-notes:hover .tooltip::before {
-  background: #087e51;
+.icon_wrapper .github:hover,
+.icon_wrapper .github:hover .tooltip,
+.icon_wrapper .github:hover .tooltip::before {
+  background: #202128;
   color: #ffffff;
   font-family: 'Agane', sans-serif;
   font-weight: lighter;
 }
 
-.icon_wrapper .patch-notes {
-  font-size: 45px;
+.icon_wrapper .github {
+  font-size: 60px;
 }
 
-.icon_wrapper .patreon:hover,
-.icon_wrapper .patreon:hover .tooltip,
-.icon_wrapper .patreon:hover .tooltip::before {
-  background: #ff424d;
+.icon_wrapper .eternodes:hover,
+.icon_wrapper .eternodes:hover .tooltip,
+.icon_wrapper .eternodes:hover .tooltip::before {
+  background: #bd9916;
   color: #ffffff;
   font-family: 'Agane', sans-serif;
   font-weight: lighter;
 }
 
-.icon_wrapper .download:hover,
-.icon_wrapper .download:hover .tooltip,
-.icon_wrapper .download:hover .tooltip::before {
-  background: #333;
-  color: #ffffff;
-  font-family: 'Agane', sans-serif;
-  font-weight: lighter;
-}
-
-.icon_wrapper .patreon {
-  font-size: 40px;
+.icon_wrapper .eternodes {
+  font-size: 60px;
 }
 
 #icon_title {
